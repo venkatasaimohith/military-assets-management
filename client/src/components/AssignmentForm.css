@@ -1,0 +1,41 @@
+.assignment-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.assignment-form-row input,
+.assignment-form-row button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.assign-button {
+  background-color: orange;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.assign-button:hover {
+  background-color: darkorange;
+}
+.purchase-form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.add-button {
+  background-color: orange;
+  color: black;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+}

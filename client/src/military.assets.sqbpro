@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="military.assets.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2335"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="asset_balances" custom_title="0" dock_id="17" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="16" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="15" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="14" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="13" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="12" table="4,14:mainasset_balances"/><table title="asset_balances" custom_title="0" dock_id="11" table="4,14:mainasset_balances"/><table title="purchases" custom_title="0" dock_id="10" table="4,9:mainpurchases"/><dock_state state="000000ff00000000fd00000001000000020000033b0000021efc0100000005fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f007700730065003301000000000000033b0000000000000000fb000000160064006f0063006b00420072006f00770073006500340100000000ffffffff0000000000000000fc000000000000033b0000011800fffffffa00000005010000000dfb000000160064006f0063006b00420072006f00770073006500350200000005000000750000033b00000209fb000000160064006f0063006b00420072006f00770073006500360200000005000000750000033b00000209fb000000160064006f0063006b00420072006f00770073006500370000000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500380000000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500390200000005000000750000033b00000209fb000000180064006f0063006b00420072006f007700730065003100300100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100310100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100320100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100330100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100340100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100350100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100360100000000ffffffff0000011800fffffffb000000180064006f0063006b00420072006f007700730065003100370100000000ffffffff0000011800ffffff000002f70000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="asset_balances" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="3" mode="0"/></sort><column_widths><column index="1" value="29"/><column index="2" value="51"/><column index="3" value="57"/><column index="4" value="103"/><column index="5" value="97"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="assets" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="245"/><column index="2" value="281"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="purchases" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="113"/><column index="2" value="107"/><column index="3" value="112"/><column index="4" value="114"/><column index="5" value="94"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="users" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort><column index="4" mode="1"/></sort><column_widths><column index="0" value="140"/><column index="1" value="140"/><column index="2" value="140"/><column index="3" value="140"/><column index="4" value="140"/><column index="5" value="140"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role TEXT NOT NULL,
+    base_id INTEGER
+);
+
+-- Assets Table
+CREATE TABLE IF NOT EXISTS assets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+-- Asset Balances Table
+CREATE TABLE IF NOT EXISTS asset_balances (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    base_id INTEGER NOT NULL,
+    asset_id INTEGER NOT NULL,
+    opening_balance INTEGER DEFAULT 0,
+    closing_balance INTEGER DEFAULT 0,
+    FOREIGN KEY (asset_id) REFERENCES assets(id)
+);
+
+-- Purchases Table
+CREATE TABLE IF NOT EXISTS purchases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    base_id INTEGER NOT NULL,
+    asset_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    FOREIGN KEY (asset_id) REFERENCES assets(id)
+);
+
+-- Transfers Table
+CREATE TABLE IF NOT EXISTS transfers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    asset_id INTEGER NOT NULL,
+    from_base INTEGER NOT NULL,
+    to_base INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    FOREIGN KEY (asset_id) REFERENCES assets(id)
+);
+
+-- Assignments Table
+CREATE TABLE IF NOT EXISTS assignments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    asset_id INTEGER NOT NULL,
+    base_id INTEGER NOT NULL,
+    personnel TEXT,
+    quantity INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    FOREIGN KEY (asset_id) REFERENCES assets(id)
+);
+
+
+CREATE TABLE IF NOT EXISTS expenditures (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    asset_id INTEGER NOT NULL,
+    base_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    reason TEXT,
+    date TEXT NOT NULL,
+    FOREIGN KEY (asset_id) REFERENCES assets(id)
+);
+CREATE TABLE IF NOT EXISTS bases (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL
+);</sql><current_tab id="0"/></tab_sql></sqlb_project>

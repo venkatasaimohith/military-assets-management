@@ -1,0 +1,36 @@
+.transfer-form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.transfer-form-row input,
+.transfer-form-row select,
+.transfer-form-row button {
+  padding: 8px 10px;
+  font-size: 14px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.transfer-form-row input,
+.transfer-form-row select {
+  width: 140px;
+}
+
+.transfer-button {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transfer-button:hover {
+  background-color: #ff9900;
+}

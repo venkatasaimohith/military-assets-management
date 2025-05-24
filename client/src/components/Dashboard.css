@@ -1,0 +1,154 @@
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table, th, td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Optional filter styling */
+.filters input, .filters button {
+  margin-right: 10px;
+  padding: 6px;
+}
+.dashboard-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dash-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  max-width: 150px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.dash-btn:hover {
+  background-color: #e68900;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters button {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  min-width: 150px;
+  max-width: 180px;
+}
+
+.filters button {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #ff9900;
+}
+table thead th {
+  background-color: rgba(0, 0, 0, 0.6); /* dark semi-transparent */
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+table tbody td {
+  background-color: rgba(255, 255, 255, 0.9); /* light background for rows */
+  color: black;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  font-weight: bold;
+}
+.purchase-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.purchase-form-row input,
+.purchase-form-row button {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 150px;
+}
+
+.add-button {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-button:hover {
+  background-color: #ff9900;
+}

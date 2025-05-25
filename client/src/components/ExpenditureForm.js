@@ -18,7 +18,7 @@ const ExpenditureForm = ({ onSuccess }) => {
 
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('${process.env.REACT_APP_API}/api/expenditures', { // ✅ fixed endpoint
+      const res = await fetch(`${process.env.REACT_APP_API}/api/expenditures`, { // ✅ fixed endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

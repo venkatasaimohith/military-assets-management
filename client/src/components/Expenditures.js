@@ -8,7 +8,7 @@ const Expenditures = () => {
 
   const fetchExpenditures = async () => {
     try {
-      const res = await fetch('${process.env.REACT_APP_API}/api/expenditures', {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/expenditures`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

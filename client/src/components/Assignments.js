@@ -7,7 +7,7 @@ const Assignments = () => {
 
   const fetchAssignments = useCallback(async () => {
     try {
-      const res = await fetch('${process.env.REACT_APP_API}/api/assignments', {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/assignments`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -7,7 +7,7 @@ const AssetTable = () => {
   useEffect(() => {
     const fetchAssets = async () => {
       try {
-        const res = await fetch('${process.env.REACT_APP_API}/api/assets', {
+        const res = await fetch(`${process.env.REACT_APP_API}/api/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

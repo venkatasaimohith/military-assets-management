@@ -19,7 +19,7 @@ const TransferForm = ({ onSuccess }) => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch('${process.env.REACT_APP_API}/api/transfers', {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/transfers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

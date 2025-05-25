@@ -16,7 +16,7 @@ const Transfers = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    const res = await fetch('http://localhost:5000/api/transfers', {
+    const res = await fetch('${process.env.REACT_APP_API}/api/transfers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

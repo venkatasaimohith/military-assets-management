@@ -14,7 +14,7 @@ const Purchases = () => {
     const token = localStorage.getItem('token');
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/purchases', {
+      const res = await fetch('${process.env.REACT_APP_API}/api/purchases', {
         headers: { Authorization: `Bearer ${token} `},
       });
       const data = await res.json();
@@ -47,7 +47,7 @@ const Purchases = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/purchases/add', {
+      const res = await fetch('${process.env.REACT_APP_API}/api/purchases/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

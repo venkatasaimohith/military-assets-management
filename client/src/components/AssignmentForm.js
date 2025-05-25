@@ -25,7 +25,7 @@ const AssignmentForm = ({ onSuccess }) => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch('http://localhost:5000/api/assignments', {
+      const res = await fetch('${process.env.REACT_APP_API}/api/assignments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -35,7 +35,7 @@ const Dashboard = () => {
   const fetchDashboardData = async (token, appliedFilters = {}) => {
     try {
       const queryParams = new URLSearchParams(appliedFilters).toString();
-      const res = await fetch(`http://localhost:5000/api/dashboard?${queryParams}`, {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/dashboard?${queryParams}`, {
         headers: { Authorization: `Bearer ${token} `},
       });
       const data = await res.json();

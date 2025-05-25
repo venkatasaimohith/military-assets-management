@@ -19,7 +19,7 @@ const PurchaseForm = ({ onSuccess }) => {
     const token = localStorage.getItem('token');
 
     try {
-      const res = await fetch('http://localhost:5000/api/purchases/add', {
+      const res = await fetch('${process.env.REACT_APP_API}/api/purchases/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

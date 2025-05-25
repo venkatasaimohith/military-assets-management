@@ -9,7 +9,7 @@ const Transfers = () => {
   // ✅ Fetch Transfers
   const fetchTransfers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/transfers', {
+      const res = await fetch('${process.env.REACT_APP_API}/api/transfers', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
